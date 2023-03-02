@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그</title>
+</head>
+<body>
+    <!--
+        <form>
+        action: <form> 태그 안의 내용을 전송할 서버의 주소
+        method: <form> 태그에 입력한 내용을 서버로 전달하는 방식을 지정
+            - get: 주소 표시줄에 사용자가 입력한 내용이 그대로 노출된다
+                   입력 내용 길이에 제한이 있다 (최대 4096바이트 까지만 전송 가능)
+            - post: 입력 내용의 길이에 제한이 없고, 입력한 내용이 주소 표시줄에 노출되지 않는다.
+    -->
+    <form action="join" method="get">
+        <label for="#id">아이디</label>
+        <input type="text" id="id" name="id"><br>
+        <label for="#name">이름</label>
+        <input type="text" id="name" name="name"><br>
+        <label>비밀번호
+            <input type="password" name="password" id="password">
+        </label><br>
+        
+        <label for="birth">생년월일</label>
+        <input type="date" name="birth" id="birth"><br>
+
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email"><br>
+
+        <label for="quantity">수량</label>
+        <input type="number" name="quantity" id="quantity"><br>
+
+        <label for="vol">볼륨</label>
+        <input type="range" name="vol" id="vol" min="0" max="10"><br>
+
+        <label for="search">검색</label>
+        <input type="search" name="search" id="search"><br>
+
+        <label for="tel">전화번호</label>
+        <input type="tel" name="tel" id="tel"><br>
+
+        <label for="homepage">홈페이지</label>
+        <input type="url" name="url" id="url"><br>
+
+        <label for="city">도시</label>
+        <select name="city" id="city">
+            <option value="seoul">서울</option>
+            <option value="busan">부산</option>
+            <option value="daegu">대구</option>
+        </select><br>   
+
+        <label for="message">메시지</label>
+        <textarea name="message" id="message" cols="30" rows="10">
+            안녕하세요
+        </textarea><br>
+
+        <!-- 얘는 그냥 버튼 -->
+        <input type="button" value="입력하세요" onclick="alert('Hello World')"><br>
+
+        <!-- 입력값 전체 삭제 -->
+        <input type="reset" value="취소하기"><br>
+
+        <input type="file" name="file" id="file"><br>
+
+        <!-- 단일 선택 항목, id는 다르지만 name이 같아야 하나로 묶임 -->
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">여자</label><br>
+
+        <!-- 다중 선택 항목 -->
+        <input type="checkbox" name="hobby" id="soccer" value="soccer">
+        <label for="soccer">축구</label>
+        <input type="checkbox" name="hobby" id="baseball" value="baseball">
+        <label for="baseball">야구</label>
+        <input type="checkbox" name="hobby" id="basketball" value="basketball">
+        <label for="basketball">농구</label><br>
+
+        <!-- 얘는 form값을 전송하는 역할 -->
+        <input type="submit" value="전송하기">
+    </form>
+</body>
+</html>
